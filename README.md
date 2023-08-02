@@ -10,3 +10,10 @@ This application is meant to act as a financial tracker to enable individual to 
 - CRUD recurring income
 - View current months standing
 - View current month projection
+
+### Intial design necessities
+API \
+Database 
+### Future plans
+Authentication\
+Frontend application
