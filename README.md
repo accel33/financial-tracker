@@ -13,7 +13,7 @@ This application is meant to act as a financial tracker to enable individual to 
 
 ### Intial design necessities
 API \
-Database 
+Database
 ### Future plans
 Authentication\
 Frontend application

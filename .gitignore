@@ -1,0 +1,6 @@
+node_modules
+.env
+.env.bak
+src/node_modules
+src/.env
+src/.env.bak
