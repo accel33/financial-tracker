@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 const app = express()
 const bodyParser = require('body-parser')
 const PORT = 3500
@@ -19,14 +19,14 @@ app.use('/expense', require('./routes/expenseRoutes'))
 
 const start = async () => {
   try {
-    await mongoose.connect(
-      process.env.MONGO_CONNECTION_STRING
-    );
-    app.listen(3500, () => console.log("Server started on port 3500"));
+    await mongoose.connect(process.env.MONGO_CONNECTION_STRING);
+    app.listen(PORT, () => {
+      console.log(`Server started at port ${PORT}`)
+    })
   } catch (error) {
-    console.error(error)
-    process.exit(1)
+    console.error(error);
+    process.exit(1);
   }
 };
 
-start()
+start();

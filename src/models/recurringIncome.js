@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ExpenseSchema = new mongoose.Schema({
+const RecurringIncomeSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -20,6 +20,6 @@ const ExpenseSchema = new mongoose.Schema({
   },
 });
 
-Expense = mongoose.model("Expense", ExpenseSchema);
+const RecurringIncome = mongoose.model("RecurringIncome", RecurringIncomeSchema);
 
-module.exports = Expense;
+module.exports = { RecurringIncome };
