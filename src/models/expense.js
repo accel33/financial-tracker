@@ -5,19 +5,14 @@ const ExpenseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  breed: {
-    type: String,
-    required: true,
-  },
-  age: {
+  amount: {
     type: Number,
     required: true,
   },
-  isGoodBoy: {
-    type: Boolean,
-    required: false,
-    default: true,
-  },
+  category: {
+    type: String,
+    required: true,
+  }
 });
 
 Expense = mongoose.model("Expense", ExpenseSchema);

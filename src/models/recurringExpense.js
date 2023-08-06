@@ -5,19 +5,14 @@ const RecurringExpenseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  breed: {
-    type: String,
-    required: true,
-  },
-  age: {
+  amount: {
     type: Number,
     required: true,
   },
-  isGoodBoy: {
-    type: Boolean,
-    required: false,
-    default: true,
-  },
+  category: {
+    type: String,
+    required: true,
+  }
 });
 
 const RecurringExpense = mongoose.model("RecurringExpense", RecurringExpenseSchema);
