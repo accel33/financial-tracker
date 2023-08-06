@@ -1,10 +1,23 @@
 const { MongoClient } = require('mongodb')
-const client = new MongoClient(process.env.MONGO_CONNECTION_STRING)
 
-const database = client.db('tracker');
-const expenses = database.collection('expenses');
-const recurringExpenses = database.collection('recurringExpenses');
-const income = database.collection('income');
-const recurringIncome = database.collection('recurringIncome');
+async function mongoConnect() {
+  try {
+    const client = new MongoClient(process.env.MONGO_CONNECTION_STRING)
+    await client.connect()
 
-module.exports = { database, expenses, recurringExpenses, income, recurringIncome }
+    const database = client.db('tracker')
+
+    return {
+      database: database,
+      expense: database.collection('expenses'),
+      recurringExpense: database.collection('recurringExpenses'),
+      income: database.collection('income'),
+      recurringIncome: database.collection('recurringIncome')
+    }
+  } catch (e) {
+    console.log(e)
+    process.exit(1)
+  }
+}
+
+module.exports = mongoConnect()
