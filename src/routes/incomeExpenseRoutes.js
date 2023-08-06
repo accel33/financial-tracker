@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { recurringIncome } = require('../mongoClient')
 
-router.route('/recurringIncome')
+router.route('/')
   .get(async (req, res) => {
     res.send(await recurringIncome.find())
   })
@@ -16,7 +16,7 @@ router.route('/recurringIncome')
     }
   })
 
-router.route('/recurringIncome/:recurringIncomeId')
+router.route('/:recurringIncomeId')
   .get(async (req, res) => {
     res.send(await recurringIncome.find({ id: req.params.recurringIncomeId }))
   })
